@@ -1,18 +1,14 @@
-
-
 provider "azurerm" {
-  features {
-    
-  }
+  features {}
 }
-resource "azurerm_resource_group" "rg1"  {
 
-name = "rgt-1"
-location = "central-india"
+resource "azurerm_resource_group" "rg" {
+  name     = "myResourceGroup"
+  location = "Central India"
 }
-resource "azurerm_virtual_network" "vnet-1" {
-
-  name = "tvnet-1"
-  location = "central-india"
-  
+resource "azurerm_virtual_network" "vnet" {
+  name                = "myVnet"
+  address_space       = ["10.0.0.0/16"]
+  location            = "Central India"
+  resource_group_name = "myResourceGroup"
 }
