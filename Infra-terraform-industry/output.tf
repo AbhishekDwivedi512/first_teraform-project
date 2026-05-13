@@ -15,3 +15,6 @@ output "subnet_names" {
     for subnet in module.subnet : subnet.subnet_name
   ]
 }
+output "peering_names" {
+  value = module.peering.peering_names
+}
